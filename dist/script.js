@@ -14010,8 +14010,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
+/* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/modals */ "./src/modules/modals.js");
 
-console.log('1');
+
+Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 /***/ }),
 
@@ -14100,6 +14102,31 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     }]
   });
 });
+
+/***/ }),
+
+/***/ "./src/modules/modals.js":
+/*!*******************************!*\
+  !*** ./src/modules/modals.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var modal = function modal() {
+  function fn(trigger, modal, close) {}
+
+  var getTrigger = document.querySelector('.popup_engineer_btn').addEventListener('click', function () {
+    return getModal.style.display = 'block';
+  });
+  var getModal = document.querySelector('.popup');
+  var getPopupClose = document.querySelector('.popup_close').addEventListener('click', function () {
+    return getModal.style.display = 'none';
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
 
 /***/ })
 

@@ -1,3 +1,4 @@
 import './slider'
+import modal from "../modules/modals";
 
-console.log('1')
+modal()
