@@ -1,20 +1,35 @@
 const modal = () => {
 
-    function fn(trigger, modal, close) {
-        trigger.addEventListener('click', (e) => {
-            if (e.target) {
-                e.preventDefault()
-            }
-            modal.style.display = 'block'
+    function bindModal(trigger, modal, close) {
+        const getTrigger = document.querySelectorAll(trigger),
+            getModal = document.querySelector(modal),
+            getPopupClose = document.querySelector(close)
+
+        getTrigger.forEach((item) => item.addEventListener('click', (e) => {
+                if (e.target) {
+                    e.preventDefault()
+                }
+
+                getModal.style.display = 'block'
+                document.body.style.overflow = 'hidden'
+
+            })
+        )
+
+
+        getPopupClose.addEventListener('click', () => {
+            getModal.style.display = 'none'
+            document.body.style.overflow = 'hidden'
         })
-        close.addEventListener('click', () => modal.style.display = 'none')
+        getModal.addEventListener('click', () => {
+            getModal.style.display = 'none'
+            document.body.style.overflow = 'hidden'
+        })
     }
 
-    const getTrigger = document.querySelector('.popup_engineer_btn')
-    const getModal = document.querySelector('.popup')
-    const getPopupClose = document.querySelector('.popup_close')
 
-    fn(getTrigger, getModal, getPopupClose)
+    bindModal('.popup_engineer_btn', '.popup', '.popup_close');
 }
+
 
 export default modal
